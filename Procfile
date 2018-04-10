@@ -1,0 +1,1 @@
+web: gunicorn sigedb.wsgi --log-file -
