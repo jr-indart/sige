@@ -79,9 +79,8 @@ WSGI_APPLICATION = 'sigedb.wsgi.application'
 
 default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db_sqlite3')
 DATABASES = {
-    'default' : config('DATABSE_URL', default=default_dburl, cast=dburl),
+    'default' : config('DATABASE_URL', default=default_dburl, cast=dburl),
     }
-}
 
 
 # Internationalization
