@@ -14,9 +14,12 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+
 from sigedb.core.views import home
+from sigedb.contractors.views import contractor
 
 urlpatterns = [
     url(r'^$', home),
+    url(r'^contractor/', contractor),
     url(r'^admin/', admin.site.urls),
 ]

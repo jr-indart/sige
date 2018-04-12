@@ -1,0 +1,30 @@
+<h1>Contractor Registration</h1>
+<form action="." method="post">
+    {% csrf_token %}
+    <p>
+        <label for="{{ form.contractor.id_for_label }}">{{ form.contractor.label }}</label>
+        {{ form.contractor.errors }}
+        {{ form.contractor }}
+    </p>
+    <p>
+        <label for="{{ form.director.id_for_label }}">{{ form.director.label }}</label>
+        {{ form.director.errors }}
+        {{ form.director }}
+    </p>
+    <p>
+        <label for="{{ form.address.id_for_label }}id_address">{{ form.address.label }}</label>
+        {{ form.address.errors }}
+        {{ form.address }}
+    </p>
+    <p>
+        <label for="{{ form.telephone.id_for_label }}">{{ form.telephone.label }}</label>
+        {{ form.telephone.errors }}
+        {{ form.telephone }}
+    </p>
+    <p>
+        <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+        {{ form.email.errors }}
+        {{ form.email }}
+    </p>
+    <input type="submit" value="OK"/>
+</form>
