@@ -36,3 +36,26 @@ class ContractorTest(TestCase):
         """Form must have 5 fields"""
         form = self.resp.context['form']
         self.assertSequenceEqual(['contractor', 'director', 'address', 'telephone', 'email'], list(form.fields))
+
+
+class ContractorPostTest(TestCase):
+    def setUp(self):
+        data = dict(contractor='Timor-Timor Lda', director='João do Timor', address='R. Jacinto, 233',
+                    telephone='670-7777-1234', email='timortimor@gmail.com')
+        self.resp = self.client.post('/contractor/', data)
+
+    def test_post(self):
+        """Valid POST should redirect /contractor/"""
+        self.assertEqual(302, self.resp.status_code)
+
+
+# class ContractorInvalidPost(TestCase):
+#     def setUp(self):
+#         self.resp = self.client.post('/contractor/', {})
+#
+#     def test_post(self):
+#         """Invalid POST should not redirect"""
+#         self.assertEqual(200, self.resp.status_code)
+#
+#     def test_template(self):
+#         self.assertTemplateUsed(self.resp, 'contractors/contractor_form.html')
