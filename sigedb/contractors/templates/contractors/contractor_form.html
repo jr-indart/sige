@@ -1,30 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SIGE - Sistema de Integrado de Gestão de Estradas</title>
+    <!-- Bootstrap  CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+</head>
+<body>
+<!-- jQuery (necessary for Bootstrap’s JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<!-- MENU -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">SIGE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="ReportLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Reports
+                </a>
+                <div class="dropdown-menu" aria-labelledby="ReportLink">
+                    <a class="dropdown-item" href="#">Progress report</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- FORM -->
 <h1>Contractor Registration</h1>
 <form action="." method="post">
     {% csrf_token %}
     <p>
-        <label for="{{ form.contractor.id_for_label }}">{{ form.contractor.label }}</label>
+        <label for="{{ form.contractor.id_for_label }}">{{ form.contractor.label }}</label></br>
         {{ form.contractor.errors }}
         {{ form.contractor }}
     </p>
     <p>
-        <label for="{{ form.director.id_for_label }}">{{ form.director.label }}</label>
+        <label for="{{ form.director.id_for_label }}">{{ form.director.label }}</label></br>
         {{ form.director.errors }}
         {{ form.director }}
     </p>
     <p>
-        <label for="{{ form.address.id_for_label }}id_address">{{ form.address.label }}</label>
+        <label for="{{ form.address.id_for_label }}id_address">{{ form.address.label }}</label></br>
         {{ form.address.errors }}
         {{ form.address }}
     </p>
     <p>
-        <label for="{{ form.telephone.id_for_label }}">{{ form.telephone.label }}</label>
+        <label for="{{ form.telephone.id_for_label }}">{{ form.telephone.label }}</label></br>
         {{ form.telephone.errors }}
         {{ form.telephone }}
     </p>
     <p>
-        <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+    <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label></br>
         {{ form.email.errors }}
         {{ form.email }}
     </p>
     <input type="submit" value="OK"/>
 </form>
+
+</body>
+</html>
+
+
