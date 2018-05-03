@@ -1,3 +1,6 @@
 from django.contrib import admin
+from sigedb.core.models import District
 
-# Register your models here.
+
+admin.site.register(District)
+

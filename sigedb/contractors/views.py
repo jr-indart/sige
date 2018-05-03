@@ -13,7 +13,7 @@ def contractor(request):
             # context = dict(contractor='Timor-Timor Lda', director='João do Timor', address='R. Jacinto, 233',
             #              telephone='670-7777-1234', email='timortimor@gmail.com')
 
-            return HttpResponseRedirect('/contractor/')
+        return HttpResponseRedirect('/contractor/')
 
         #else:
         #    context = {'form': ContractorForm()}
